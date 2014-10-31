@@ -1,6 +1,7 @@
 import numpy as np
 from scipy import sparse
 import MySQLdb
+import os
 
 mysql_user,mysql_pass = [line.strip() for line in open('mysql.key')]
 db = MySQLdb.connect(host="127.0.0.1", user=mysql_user, passwd=mysql_pass,db="analysis_lastfm")
@@ -13,7 +14,7 @@ infile = 'E:/BTSync/Research.Archive/LastFM/TagsAndMemory/anno_scrobbleUsers_uid
 filerows = 29121682
 
 nMonths = 90
-arrayLength = 4+(2*nMonths)-1
+arrayLength = 5+(2*nMonths)-1
 basedate = (2005*12)+7
 chunksize=1000000
 
@@ -27,16 +28,18 @@ def sparse_loader(filename):
 
 mat = np.empty((chunksize,arrayLength))
 chunk = 0
+chunk_i = 0
 
 for i,line in enumerate(open(infile)):
 
-	if i>0 and i%chunksize==0:
+	if i%chunksize==0 and i>0:
 		sparse_mat = sparse.csr_matrix(mat)
 		print 'saving chunk %s' % chunk
 		fi = 'E:/chunk%03d' % chunk
 		sparse_saver(sparse_mat,fi)
 		mat = np.empty((chunksize,arrayLength))
 		chunk+=1
+		chunk_i = 0
 
 	current = np.zeros(nMonths)
 
@@ -52,8 +55,11 @@ for i,line in enumerate(open(infile)):
 
 	current = np.concatenate([[0]*(nMonths-month_index-1),current,[0]*(month_index)])
 	# So, to get values corresponding to "real" time periods in aligned time series X, we would use:
-	# X[4+nMonths-month_index-1:][:nMonths] 
-	current = np.concatenate([map(int,[user,artist,tag,month_index]),current])
+	# X[5+nMonths-month_index-1:][:nMonths] 
+	current = np.concatenate([map(int,[user,artist,item,tag,month_index]),current])
+
+	mat[chunk_i] = current
+	chunk_i += 1
 
 db.close()
 
