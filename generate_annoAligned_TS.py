@@ -7,7 +7,6 @@ mysql_user,mysql_pass = [line.strip() for line in open('mysql.key')]
 db = MySQLdb.connect(host="127.0.0.1", user=mysql_user, passwd=mysql_pass,db="analysis_lastfm")
 cursor = db.cursor()
 
-users = {}
 
 ## Generating MySQL query: select a.* from lastfm_annotations a join lastfm_users u on a.user_id=u.user_id where u.scrobbles_recorded=1 order by user_id,artist_id,tag_id,tag_month into outfile X;''
 infile = 'E:/BTSync/Research.Archive/LastFM/TagsAndMemory/anno_scrobbleUsers_uid-aid-tid-date_20141029.tsv'
@@ -46,14 +45,14 @@ for i,line in enumerate(open(infile)):
 	user,item,artist,tag,date = line.strip().split('\t')
 	print '%s / %s, %.2f percent complete' % (i+1,filerows,100*((i+1.)/filerows))
 	year,month = date.split('-')[:2]
-	month_index = (((12*int(year))+int(month)) - basedate)
+	anno_month_index = (((12*int(year))+int(month)) - basedate)
 
 	cursor.execute("select year(scrobble_time),month(scrobble_time),count(*) from lastfm_scrobbles where user_id=%s and artist_id=%s group by year(scrobble_time),month(scrobble_time)",(user,artist))
 	for y,m,cnt in cursor.fetchall():				
 		month_index = (((12*y)+m) - basedate)
 		current[month_index] = cnt
 
-	current = np.concatenate([[0]*(nMonths-month_index-1),current,[0]*(month_index)])
+	current = np.concatenate([[0]*(nMonths-anno_month_index-1),current,[0]*(anno_month_index)])
 	# So, to get values corresponding to "real" time periods in aligned time series X, we would use:
 	# X[5+nMonths-month_index-1:][:nMonths] 
 	current = np.concatenate([map(int,[user,artist,item,tag,month_index]),current])
