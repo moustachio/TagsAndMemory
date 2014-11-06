@@ -4,6 +4,7 @@ import os
 
 ## Generating MySQL query: select s.user_id,s.artist_id,year(s.scrobble_time),month(s.scrobble_time),count(*) from lastfm_scrobbles s left outer join lastfm_annotations a on s.artist_id = a.artist_id and s.user_id=a.user_id where a.user_id is null group by s.user_id,s.artist_id,year(s.scrobble_time),month(s.scrobble_time) into outfile 'untagged_TS_20141102.tsv';
 infile = 'E:/BTSync/Research.Archive/LastFM/TagsAndMemory/untagged_TS.tsv_20141102.tsv'
+drive = 'D:/'
 filerows = 286901666
 
 nMonths = 90
@@ -32,22 +33,22 @@ lastArtist = None
 for i,line in enumerate(open(infile)):
 
 	if i%100000==0:
-		print '%.2f percent of file processed' % 100*((i+1.)/filerows)
+		print '%.2f percent of file processed' % (100*((i+1.)/filerows))
 		print '%s total time series processed' % total_TS
 
 	if chunk_i%chunksize==0 and chunk_i>0:
 		sparse_mat = sparse.csr_matrix(mat)
 		print 'saving chunk %s' % chunk
-		fi = 'E:/chunk%03d' % chunk
+		fi = drive+'chunk%03d' % chunk
 		sparse_saver(sparse_mat,fi)
 		mat = np.empty((chunksize,arrayLength))
 		chunk+=1
 		chunk_i = 0
 
-	user,artist,year,month,freq = line.strip().split('\t')
+	user,artist,year,month,freq = map(int,line.strip().split('\t'))
 	month_index = (((12*year)+month) - basedate)
 
-	if (user!=lastUser) or (artist!=lastArtist):
+	if lastUser and ((user!=lastUser) or (artist!=lastArtist)):
 		current = np.concatenate([[lastUser,lastArtist],current])
 		mat[chunk_i] = current
 		current = np.zeros(nMonths)
@@ -66,12 +67,12 @@ mat[chunk_i] = current
 trimmed = mat[~np.all(mat<1,axis=1)]
 sparse_mat = sparse.csr_matrix(trimmed)
 print 'saving chunk %s' % chunk
-fi = 'E:/chunk%03d' % chunk
+fi = drive+'chunk%03d' % chunk
 sparse_saver(sparse_mat,fi)
 mat = np.empty((chunksize,arrayLength))
 
 # Now we concatenate all the chunks together into one big sparse matrix.
-prefix = 'E:/'
+prefix = drive
 files = [f for f in os.listdir(prefix) if '.npz' in f]
 data = sparse.csr_matrix((0,arrayLength))
 for fi in files:

@@ -1,0 +1,95 @@
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\usepackage[font={small}]{caption, subfig}
+\usepackage{url}
+\urldef{\mails}\path|{jlorince,pmtodd}@indiana.edu| 
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+%\pdfpagesattr{/CropBox [94 112 523 778]}
+  \def\baselinestretch{0.98}
+  \addtolength{\textheight}{0.7in}
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{Analysis of music tagging and listening patterns: Do tags really function as retrieval aids?}
+
+
+% a short form should be given in case it is too long for the running head
+\titlerunning{Do tags really function as retrieval aids?}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{Jared Lorince\inst{1}%
+\and Kenneth Joseph\inst{2} \and Peter M. Todd\inst{1}}
+%
+\authorrunning{Lorince, Joseph, \& Todd}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{Cognitive Science Program\\
+%Department of Psychological \& Brain Sciences\\
+Indiana University, Bloomington, Indiana, USA\\
+\mails \\
+\and 
+Computation, Organization and Society program \\
+%School of Computer Science\\
+Carnegie Mellon University, Pittsburgh, PA, USA\\
+\email{kjoseph@cs.cmu.edu}}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+\toctitle{Analysis of music tagging and listening patterns: Do tags really function as retrieval aids?}
+\tocauthor{Lorince, Joseph, \& Todd}
+\maketitle
+
+\begin{abstract}
+In collaborative tagging systems, it is generally assumed that users assign tags to facilitate retrieval of content at a later time. There is, however, little behavioral evidence that tags actually serve this purpose. Using a large-scale dataset from the social music website Last.fm, we explore here how patterns of music tagging and subsequent listening interact in an effort to determine if there exist measurable signals of tags functioning as retrieval aids. Specifically, we describe several methods for testing if the assignment of a tag tends to lead to an increase in listening behavior. Results indicate \ldots
+\keywords{Collaborative tagging, Folksonomy, Music listening, Memory cues, Retrieval aids, Personal information management}
+\end{abstract}
+\setcounter{footnote}{0}
+
+\input{intro}
+\input{related}
+\input{methodology}
+\input{results}
+\input{conclusion}
+
+\bibliographystyle{splncs}
+\bibliography{references}
+
+\end{document}
