@@ -1,6 +1,10 @@
+=======
 # Manually added
 *.key
+data/
+.ipynb_checkpoints/
 
+>>>>>>> 3fba952a44c54680f781afc2a1f615e51ca8bdd1
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
