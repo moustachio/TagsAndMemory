@@ -1,0 +1,28 @@
+\section{Dataset}
+\label{sec_dataset}
+Last.fm incorporates two specific features of interest to us here. First, it implements a collaborative tagging system (a ``broad'' folksonomy, following Vander Wal's \cite{VanderWal2005} terminology, meaning that multiple users tag the same, publicly available content) in which users can label artist, albums, and songs. Second, the service tracks users' listening habits both on the website itself and on media players (e.g. iTunes) via a software plugin. This tracking process is known as ``scrobbling'', and each timestamped instance of a user listening to a particular song is termed a ``scrobble''.
+
+Here we utilize an expanded version of a dataset described in earlier work \cite{Lorince2013,Lorince2014} that includes the full tagging histories of approximately 1.9 million Last.fm users, and full listening histories from a subset of those users (approximately 100,000) for a 90-month time window (July 2005 - December 2012, inclusive). Data were collected via a combination of the Last.fm API and direct scraping of publicly available user profile pages. For further details of the crawling process, see \cite{Lorince2013,Lorince2014}.
+
+For our current purposes, we consider only those users for which we have both tagging and listening histories. For each user, we extract one time series for each unique artist listened to by that user. Each user-artist listening time series consists of a given users's monthly listening frequency to a particular artist for each month in our data collection period, represented as a 90-element vector. 
+
+The over 2 billion individual scrobbles in our dataset define a total of XXX such time series. In XXX of these cases, the user has assigned at least one tag to the artist within the collection period (we refer to these as tagged time series), while in the remaining cases (XXX) the user has never tagged the artist. We summarize these high level dataset statistics in Table~\ref{tab:data_summary}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{l|r}
+\toprule
+Total users & 104,829 \\
+Total scrobbles & 2,089,473,214 \\
+Unique artists listened & X,XXX,XXX \\
+Unique artists tagged & X,XXX,XXX \\
+\midrule
+Total user-artist listening time series & XX,XXX,XXX \\
+Total tagged time series & X,XXX,XXX \\
+Total untagged time series & 88,944,512 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Dataset summary}
+\label{tab:data_summary}
+\end{table}

@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{Lorince2013}
+Lorince, J., Todd, P.M.: {Can simple social copying heuristics explain tag
+  popularity in a collaborative tagging system?} In: {Proceedings of the 5th
+  Annual ACM Web Science Conference}. pp. 215--224. {ACM} (2013),
+  \url{http://dl.acm.org/citation.cfm?id=2464516}
+
+\bibitem{Lorince2014}
+Lorince, J., Zorowitz, S., Murdock, J., Todd, P.M.: {"Supertagger" behavior in
+  building folksonomies}. In: {Proceedings of the 6th Annual ACM Web Science
+  Conference}. pp. 129--138. {ACM} (2014),
+  \url{http://dl.acm.org/citation.cfm?doid=2615569.2615686}
+
+\bibitem{VanderWal2005}
+Vander~Wal, T.: {Explaining and Showing Broad and Narrow Folksonomies} (2005),
+  \url{http://www.vanderwal.net/random/entrysel.php?blog=1635}
+
+\bibitem{VanderWal2007}
+Vander~Wal, T.: {Folksonomy Coinage and Definition} (2007),
+  \url{http://vanderwal.net/folksonomy.html}
+
+\end{thebibliography}
