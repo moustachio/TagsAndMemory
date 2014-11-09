@@ -4,49 +4,55 @@ The top-level auxiliary file: Lorince.Joseph.Todd.SBP2015.aux
 The style file: splncs.bst
 Database file #1: references.bib
 Warning--entry type for "VanderWal2005" isn't style-file defined
---line 4 of file references.bib
+--line 46 of file references.bib
 Warning--entry type for "VanderWal2007" isn't style-file defined
---line 28 of file references.bib
+--line 206 of file references.bib
+Warning--empty journal in Cattuto2007a
+Warning--empty journal in Glushko2008
 Warning--empty journal in Golder2006
-You've used 6 entries,
+Warning--empty journal in Gupta2010
+Warning--empty journal in Robu2009
+Warning--empty journal in Yeung2009
+Warning--empty journal in Yeung2011
+You've used 22 entries,
             2785 wiz_defined-function locations,
-            627 strings with 5675 characters,
-and the built_in function-call counts, 3319 in all, are:
-= -- 291
-> -- 82
-< -- 5
-+ -- 34
-- -- 28
-* -- 209
-:= -- 416
-add.period$ -- 9
-call.type$ -- 6
-change.case$ -- 38
+            738 strings with 9669 characters,
+and the built_in function-call counts, 13661 in all, are:
+= -- 1182
+> -- 419
+< -- 23
++ -- 172
+- -- 150
+* -- 913
+:= -- 1717
+add.period$ -- 35
+call.type$ -- 22
+change.case$ -- 167
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 283
-empty$ -- 311
-format.name$ -- 32
-if$ -- 741
+cite$ -- 29
+duplicate$ -- 1165
+empty$ -- 1193
+format.name$ -- 169
+if$ -- 3011
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 54
-newline$ -- 23
-num.names$ -- 12
-pop$ -- 113
+int.to.str$ -- 22
+missing$ -- 237
+newline$ -- 71
+num.names$ -- 44
+pop$ -- 459
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 119
 quote$ -- 0
-skip$ -- 102
+skip$ -- 392
 stack$ -- 0
-substring$ -- 206
-swap$ -- 152
-text.length$ -- 5
+substring$ -- 803
+swap$ -- 654
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 30
-width$ -- 7
-write$ -- 65
-(There were 3 warnings)
+type$ -- 88
+warning$ -- 7
+while$ -- 116
+width$ -- 24
+write$ -- 234
+(There were 9 warnings)
