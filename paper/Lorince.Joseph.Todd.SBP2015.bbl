@@ -2,6 +2,17 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{Golder2006}
+Golder, S.A., Huberman, B.A.: {Usage patterns of collaborative tagging systems}
+   {32}(2),  198--208 (2006),
+  \url{http://jis.sagepub.com/content/32/2/198.short}
+
+\bibitem{Hotho2006a}
+Hotho, A., J\"{a}schke, R., Schmitz, C., Stumme, G.: {Information retrieval in
+  folksonomies: Search and ranking}. In: {Proceedings of 3rd European Semantic
+  Web Confernece (ESWC)}. pp. 411--426. {Springer} (2006),
+  \url{http://link.springer.com/chapter/10.1007/11762256_31}
+
 \bibitem{Lorince2013}
 Lorince, J., Todd, P.M.: {Can simple social copying heuristics explain tag
   popularity in a collaborative tagging system?} In: {Proceedings of the 5th
