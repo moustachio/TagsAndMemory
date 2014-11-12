@@ -1,0 +1,5 @@
+\contentsline {todo}{Why do we have to log transform this one? Just for comparison, wouldn't the straight (normalized) means be fine?}{5}
+\contentsline {todo}{Probably need to say something about the CIs here, if we leave them in, or else otherwise justify that this is a meaningful difference}{5}
+\contentsline {todo}{Okay, here's where you can insert your description of the regression mode/results, to make sure I don't muck it up}{6}
+\contentsline {todo}{What was your p-value here? 0.05? Also not sure how much extra detail on the regression model is needed here, as it's basically the same as what we describe in the previous section}{6}
+\contentsline {todo}{I think we should plot this against global tag popularity (i.e. from the full dataset). I doubt the shape will be different, but I think that's more appropriate here. I can do this easiy once I have the final list of significant tags}{6}

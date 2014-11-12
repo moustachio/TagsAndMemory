@@ -1,2 +1,43 @@
 \section{Analyses \& Results}
 \label{sec_analyses}
+
+\subsection{Comparison of tagged and untagged time series}
+Our principal research question is whether listening patterns to tagged versus untagged content are consistent with tags serving as memory cues. If they do serve this purpose, we should expect increased listening rates for musical artists once a tag is applied, under the assumption that a tag facilitates retrieval and increaes the chances of a user listening to a tagged artist. A cursory examination of the data demonstrate that listening rates for tagged time series are much greater than for untagged time series (the average number of listens across all time series is 16.9  when untagged and 98.9 when tagged). While suggestive of the importance of tagging, more involved analysis is required to say whether the difference actually has anything to do with tagging. This could simply indicate that users are much more likely to tag those artists they are likely to listen to more anyway.
+
+Thus we must compare tagged and untagged time series in a ``fair'' manner, controlling for as many factors as possible. To do so, we first need a means of temporally aligning tagged and untagged time series. Tagged time series are aligned so that they are centered on the month in which they were tagged (allowing us to compare pre- and post-tagging behavior), but there is no direct analog to this among the untagged data. We resolve this by noting that tagging is disproportionately likely in a user's peak listening month for a given artist: In approximately 30\% of our 6 million tagged time series, a user has tagged an artist in the same month where she has listened to that artist most. This provides a basis for aligning the tagged and untagged time series, by selecting only those tagged time series where the tag was applied in the month of peak listening, and a matched sample of untagged time series. After aligning both samples to the month with the most listening (i.e. so that all time series are centered about the peak), we limited our analysis to a 13 month period extending from 6 months prior to the peak month to 6 months after the peak. To ensure comparability we constain the time series to have:
+\begin{itemize}
+\item more than 25 total listens; 
+\item a peak in listening at least 6 months from the edges of our data collection perod (i.e. ensuring that the period from 6 months before to 6 months after the peak does not extend beyond the limits of our data range); and
+\item at least one listen 6 months prior to and after the peak (i.e. if the peak occurs in July 2008, there should be at least one listen in January 2007, and one listening in January 2009).
+\end{itemize}
+
+Constraining our time series in this manner, we were left with a total 206,140 tagged time series, and randomly sampled an equal number of tagged time series meeting the same three criteria.
+
+In Figure~\ref{fig:taggedVsUntagged} we plot the mean playcounts (log-transformed and normalized \todo{Why do we have to log transform this one? Just for comparison, wouldn't the straight (normalized)  means be fine?}) for tagged and untagged time series for each month in our analysis window. Both show relatively increased listening rates in the months after the peak as opposed to those prior. We observe, however, a small but reliable \todo{Probably need to say something about the CIs here, if we leave them in, or else otherwise justify that this is a meaningful difference} effect wherein tagged time series show proportionally higher listening rates after the peak month (in which the the tag was applied) as compared to untagged time series. This is suggestive of an increase in listening as a result of tagging.
+
+To more robustly test for such an effect, we next developed a generalized additive regression model relating post- and pre-peak listening behavior. \todo{Okay, here's where you can insert your description of the regression mode/results, to make sure I don't muck it up}.
+
+
+  \begin{figure}
+    \subfloat[Mean log-transformed and normalized playcount by month. \label{fig:taggedVsUntagged}]{%
+      \includegraphics[width=0.45\textwidth]{example-image-a}
+    }
+    \hfill
+    \subfloat[Regression results, with 95\% confidence interval. \label{fig:regression}]{%
+      \includegraphics[width=0.45\textwidth]{example-image-b}
+    }
+    \caption{Comparison of tagged and untagged listening time series}
+    \label{fig:dummy}
+  \end{figure}
+
+\subsection{Tag analysis}
+To examine if and how different tags are associated with increased future listening, we repeated the same regression analysis (on the tagged time series along) described above, but this time included binary (present / not present) regressors for all unique tags that had at least 10 occurrences in our subsample. Among the $\sim200,000$ annotations captured by our tagged time series, this amounted to $\sim1,200$ unique tags. Of these, 108 proved to be statistically significant \todo{What was your p-value here? 0.05? Also not sure how much extra detail on the regression model is needed here, as it's basically the same as what we describe in the previous section} in the resultant mode. While we only have sufficient evidence to make claims about these 108 tags, qualitative examination of which tags are relatively strong predictors in the model proves informative. 
+
+The most telling observation is that commonly-used genre tags (e.g. "pop", "jazz", and "hip-hop") tend to be weak, negative predictors of future listening. In contrst, relatively strong predictors (both positive and negative) appear to be relatively obscure, possibly idiosyncratic tags ("arguman-loved tracks", "mymusic", "leapsandbounds cdcollection"). To examine this trend quantitatively, we plot in Figure~\ref{fig:coefVsPopularity} global tag popularity (i.e. the total number of uses of a tag in our full dataset, which consists of $\sim 50$ million annotations) as a function of its coefficent in our regression model. This reveals a clear trend of the most popular tags being negative, but very weak, predictors of future listening, while strong predictors tend to be relatively unpopular.
+
+  \begin{figure}
+	\centering
+      \includegraphics[width=0.45\textwidth]{example-image-c}
+    \caption{Tags' global popularity as a function of coefficient in our regression model.}
+    \label{fig:coefVsPopularity}
+  \end{figure}\todo{I think we should plot this against global tag popularity (i.e. from the full dataset). I doubt the shape will be different, but I think that's more appropriate here. I can do this easiy once I have the final list of significant tags} 

@@ -4,9 +4,9 @@ The top-level auxiliary file: Lorince.Joseph.Todd.SBP2015.aux
 The style file: splncs.bst
 Database file #1: references.bib
 Warning--entry type for "VanderWal2005" isn't style-file defined
---line 46 of file references.bib
+--line 41 of file references.bib
 Warning--entry type for "VanderWal2007" isn't style-file defined
---line 206 of file references.bib
+--line 190 of file references.bib
 Warning--empty journal in Cattuto2007a
 Warning--empty journal in Glushko2008
 Warning--empty journal in Golder2006
@@ -16,15 +16,15 @@ Warning--empty journal in Yeung2009
 Warning--empty journal in Yeung2011
 You've used 22 entries,
             2785 wiz_defined-function locations,
-            738 strings with 9669 characters,
-and the built_in function-call counts, 13661 in all, are:
-= -- 1182
+            716 strings with 8646 characters,
+and the built_in function-call counts, 13529 in all, are:
+= -- 1160
 > -- 419
 < -- 23
 + -- 172
 - -- 150
-* -- 913
-:= -- 1717
+* -- 847
+:= -- 1695
 add.period$ -- 35
 call.type$ -- 22
 change.case$ -- 167
@@ -33,13 +33,13 @@ cite$ -- 29
 duplicate$ -- 1165
 empty$ -- 1193
 format.name$ -- 169
-if$ -- 3011
+if$ -- 2989
 int.to.chr$ -- 0
 int.to.str$ -- 22
 missing$ -- 237
 newline$ -- 71
 num.names$ -- 44
-pop$ -- 459
+pop$ -- 481
 preamble$ -- 1
 purify$ -- 119
 quote$ -- 0
@@ -54,5 +54,5 @@ type$ -- 88
 warning$ -- 7
 while$ -- 116
 width$ -- 24
-write$ -- 234
+write$ -- 212
 (There were 9 warnings)
