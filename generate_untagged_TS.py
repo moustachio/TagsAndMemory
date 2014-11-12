@@ -3,6 +3,7 @@ from scipy import sparse
 import os
 
 ## Generating MySQL query: select s.user_id,s.artist_id,year(s.scrobble_time),month(s.scrobble_time),count(*) from lastfm_scrobbles s left outer join lastfm_annotations a on s.artist_id = a.artist_id and s.user_id=a.user_id where a.user_id is null group by s.user_id,s.artist_id,year(s.scrobble_time),month(s.scrobble_time) into outfile 'untagged_TS_20141102.tsv';
+
 infile = 'E:/BTSync/Research.Archive/LastFM/TagsAndMemory/untagged_TS.tsv_20141102.tsv'
 drive = 'D:/'
 filerows = 286901666
