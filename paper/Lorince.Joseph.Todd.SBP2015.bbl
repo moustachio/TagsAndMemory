@@ -9,24 +9,28 @@ Ames, M., Naaman, M.: {Why we tag: motivations for annotation in mobile and
 
 \bibitem{Cattuto2007a}
 Cattuto, C., Loreto, V., Pietronero, L.: {Semiotic dynamics and collaborative
-  tagging}  {104}(5),  1461--1464 (2007)
+  tagging}. {Proceedings of the National Academy of Sciences}  {104}(5),
+  1461--1464 (2007)
 
 \bibitem{Glushko2008}
 Glushko, R.J., Maglio, P.P., Matlock, T., Barsalou, L.W.: {Categorization in
-  the wild}  {12}(4),  129--135 (2008)
+  the wild}. {Trends in Cognitive Sciences}  {12}(4),  129--135 (2008)
 
 \bibitem{Golder2006}
-Golder, S.A., Huberman, B.A.: {Usage patterns of collaborative tagging systems}
-   {32}(2),  198--208 (2006)
+Golder, S.A., Huberman, B.A.: {Usage patterns of collaborative tagging
+  systems}. {Journal of information science}  {32}(2),  198--208 (2006)
 
 \bibitem{Gupta2010}
-Gupta, M., Li, R., Yin, Z., Han, J.: {Survey on social tagging techniques}
-  {12}(1),  58--72 (2010)
+Gupta, M., Li, R., Yin, Z., Han, J.: {Survey on social tagging techniques}.
+  {ACM SIGKDD Explorations Newsletter}  {12}(1),  58--72 (2010)
 
 \bibitem{Halpin2007}
 Halpin, H., Robu, V., Shepherd, H.: {The complex dynamics of collaborative
   tagging}. In: {Proceedings of the 16th international conference on World Wide
   Web}. pp. 211--220. {ACM} (2007)
+
+\bibitem{hastie1990generalized}
+Hastie, T.J., Tibshirani, R.J.: {Generalized additive models} (1990)
 
 \bibitem{Heckner2009}
 Heckner, M., Heilemann, M., Wolff, C.: {Personal Information Management vs.
@@ -72,7 +76,8 @@ Nov, O., Naaman, M., Ye, C.: {What drives content tagging: the case of photos
 
 \bibitem{Robu2009}
 Robu, V., Halpin, H., Shepherd, H.: {Emergence of consensus and shared
-  vocabularies in collaborative tagging systems}  {3}(4), ~14 (2009)
+  vocabularies in collaborative tagging systems}. {ACM Transactions on the Web
+  (TWEB)}  {3}(4), ~14 (2009)
 
 \bibitem{Sen2006}
 Sen, S., Lam, S.K., Rashid, A.M., Cosley, D., Frankowski, D., Osterhouse, J.,
@@ -81,10 +86,16 @@ Sen, S., Lam, S.K., Rashid, A.M., Cosley, D., Frankowski, D., Osterhouse, J.,
   cooperative work}. pp. 181--190. {ACM} (2006)
 
 \bibitem{VanderWal2005}
-Vander~Wal, T.: {Explaining and Showing Broad and Narrow Folksonomies} (2005)
+Vander~Wal, T.: {Explaining and Showing Broad and Narrow Folksonomies} (2005),
+  \url{http://www.vanderwal.net/random/entrysel.php?blog=1635}
 
 \bibitem{VanderWal2007}
-Vander~Wal, T.: {Folksonomy Coinage and Definition} (2007)
+Vander~Wal, T.: {Folksonomy Coinage and Definition} (2007),
+  \url{http://vanderwal.net/folksonomy.html}
+
+\bibitem{wood2001mgcv}
+Wood, S.N.: {mgcv: GAMs and generalized ridge regression for R}. {R news}
+  {1}(2),  20--25 (2001)
 
 \bibitem{Yeung2009}
 Yeung, A., Man, C., Noll, M., Gibbins, N., Meinel, C., Shadbolt, N.: {On
@@ -93,7 +104,7 @@ Yeung, A., Man, C., Noll, M., Gibbins, N., Meinel, C., Shadbolt, N.: {On
 \bibitem{Yeung2011}
 Yeung, C.m.A., Noll, M.G., Gibbins, N., Meinel, C., Shadbolt, N.: {SPEAR:
   Spamming-Resistant Expertise Analysis and Ranking in Collaborative Tagging
-  Systems}  {27}(3),  458--488 (2011)
+  Systems}. {Computational Intelligence}  {27}(3),  458--488 (2011)
 
 \bibitem{Zollers2007}
 Zollers, A.: {Emerging motivations for tagging: Expression, performance, and

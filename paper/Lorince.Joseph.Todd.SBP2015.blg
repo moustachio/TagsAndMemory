@@ -1,58 +1,66 @@
-This is BibTeX, Version 0.99d (TeX Live 2012/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Lorince.Joseph.Todd.SBP2015.aux
 The style file: splncs.bst
 Database file #1: references.bib
-Warning--entry type for "VanderWal2005" isn't style-file defined
---line 41 of file references.bib
 Warning--entry type for "VanderWal2007" isn't style-file defined
---line 190 of file references.bib
-Warning--empty journal in Cattuto2007a
-Warning--empty journal in Glushko2008
-Warning--empty journal in Golder2006
-Warning--empty journal in Gupta2010
-Warning--empty journal in Robu2009
+--line 158 of file references.bib
+Warning--I'm ignoring VanderWal2007's extra "url" field
+--line 168 of file references.bib
+Warning--entry type for "VanderWal2005" isn't style-file defined
+--line 170 of file references.bib
+Warning--I'm ignoring VanderWal2005's extra "url" field
+--line 178 of file references.bib
+Repeated entry---line 182 of file references.bib
+ : @online{VanderWal2007
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 192 of file references.bib
+ : @online{VanderWal2005
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--entry type for "hastie1990generalized" isn't style-file defined
+--line 337 of file references.bib
 Warning--empty journal in Yeung2009
-Warning--empty journal in Yeung2011
-You've used 22 entries,
+You've used 24 entries,
             2785 wiz_defined-function locations,
-            716 strings with 8646 characters,
-and the built_in function-call counts, 13529 in all, are:
-= -- 1160
-> -- 419
-< -- 23
-+ -- 172
-- -- 150
-* -- 847
-:= -- 1695
-add.period$ -- 35
-call.type$ -- 22
-change.case$ -- 167
+            737 strings with 9154 characters,
+and the built_in function-call counts, 14437 in all, are:
+= -- 1244
+> -- 438
+< -- 25
++ -- 180
+- -- 156
+* -- 884
+:= -- 1817
+add.period$ -- 42
+call.type$ -- 24
+change.case$ -- 176
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 1165
-empty$ -- 1193
-format.name$ -- 169
-if$ -- 2989
+cite$ -- 25
+duplicate$ -- 1250
+empty$ -- 1284
+format.name$ -- 176
+if$ -- 3198
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 237
-newline$ -- 71
-num.names$ -- 44
-pop$ -- 481
+int.to.str$ -- 24
+missing$ -- 252
+newline$ -- 77
+num.names$ -- 48
+pop$ -- 497
 preamble$ -- 1
-purify$ -- 119
+purify$ -- 126
 quote$ -- 0
-skip$ -- 392
+skip$ -- 419
 stack$ -- 0
-substring$ -- 803
-swap$ -- 654
-text.length$ -- 23
+substring$ -- 853
+swap$ -- 705
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
-warning$ -- 7
-while$ -- 116
-width$ -- 24
-write$ -- 212
-(There were 9 warnings)
+type$ -- 96
+warning$ -- 1
+while$ -- 125
+width$ -- 26
+write$ -- 243
+(There were 2 error messages)
