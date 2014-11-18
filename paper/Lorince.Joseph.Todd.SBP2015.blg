@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
+This is BibTeX, Version 0.99d (TeX Live 2012/W32TeX)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Lorince.Joseph.Todd.SBP2015.aux
 The style file: splncs.bst
@@ -21,46 +21,45 @@ Repeated entry---line 192 of file references.bib
 I'm skipping whatever remains of this entry
 Warning--entry type for "hastie1990generalized" isn't style-file defined
 --line 337 of file references.bib
-Warning--empty journal in Yeung2009
-You've used 24 entries,
+You've used 23 entries,
             2785 wiz_defined-function locations,
-            737 strings with 9154 characters,
-and the built_in function-call counts, 14437 in all, are:
-= -- 1244
-> -- 438
+            733 strings with 8973 characters,
+and the built_in function-call counts, 13913 in all, are:
+= -- 1210
+> -- 406
 < -- 25
-+ -- 180
-- -- 156
-* -- 884
-:= -- 1817
++ -- 167
+- -- 144
+* -- 844
+:= -- 1741
 add.period$ -- 42
-call.type$ -- 24
-change.case$ -- 176
+call.type$ -- 23
+change.case$ -- 167
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 1250
-empty$ -- 1284
-format.name$ -- 176
-if$ -- 3198
+cite$ -- 23
+duplicate$ -- 1206
+empty$ -- 1247
+format.name$ -- 163
+if$ -- 3097
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 252
-newline$ -- 77
-num.names$ -- 48
-pop$ -- 497
+int.to.str$ -- 23
+missing$ -- 240
+newline$ -- 74
+num.names$ -- 46
+pop$ -- 471
 preamble$ -- 1
-purify$ -- 126
+purify$ -- 118
 quote$ -- 0
-skip$ -- 419
+skip$ -- 411
 stack$ -- 0
-substring$ -- 853
-swap$ -- 705
+substring$ -- 840
+swap$ -- 684
 text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
-warning$ -- 1
-while$ -- 125
-width$ -- 26
-write$ -- 243
+type$ -- 92
+warning$ -- 0
+while$ -- 122
+width$ -- 25
+write$ -- 236
 (There were 2 error messages)
