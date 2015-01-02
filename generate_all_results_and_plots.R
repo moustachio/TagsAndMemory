@@ -107,55 +107,34 @@ vis.gam(res_gam3)
 #########HYPOTHESIS 2##########
 ###############################
 
-tagged <- get_data("data/tagged.csv",
-                   before_cols,after_cols,all_cols)
-
-tagged_used <- tagged[V10 >= V4 &
-                        V10 >= V5 &
-                        V10 >= V6 &
-                        V10 >= V7 &
-                        V10 >= V8 &
-                        V10 >= V9 &
-                        V10 >= V11 &
-                        V10 >= V12 &
-                        V10 >= V13 &
-                        V10 >= V14 &
-                        V10 >= V15 &
-                        V10 >= V16,]
-dup <- which(!duplicated(tagged_used,by=c("V1","V2")))
-tagged_used <- tagged_used[dup,]
-
-tagged_not_used <- tagged[!(V10 >= V4 &
-                              V10 >= V5 &
-                              V10 >= V6 &
-                              V10 >= V7 &
-                              V10 >= V8 &
-                              V10 >= V9 &
-                              V10 >= V11 &
-                              V10 >= V12 &
-                              V10 >= V13 &
-                              V10 >= V14 &
-                              V10 >= V15 &
-                              V10 >= V16),]
-dup <- which(!duplicated(tagged_not_used,by=c("V1","V2")))
-tagged_not_used <- tagged_not_used[dup,]
-
-tags_for_reg <- rbind(tagged_used,tagged_not_used)
-
 ##controlling for previous listening behavior, which tags ultimately best predict future listening behavior
-setnames(tags_for_reg, c("V1","V2","V3"), c("user","artist","tag"))
-tag_counts <- tags_for_reg[,length(user),by=c("tag")]
+setnames(reg_data, c("V1","V2","V3"), c("user","artist","tag"))
+tag_counts <- reg_data[,length(user),by=c("tag")]
 
-tag_names <- fread("data/tag_names.tsv")
-setnames(tag_names,c("tag_id","name","ent1","ent2"))
-
-tagged_pred <- tags_for_reg[tag %in% tag_counts[V1 > 5,]$tag,]
+tagged_pred <- reg_data[(tag %in% tag_counts[V1 > 5,]$tag) ,]
 tagged_pred$tag_factor <- factor(tagged_pred$tag)
 
-res_tag <- bam(log(after_sum)~s(log(V10+.01),bs="cr")+tag_factor,data=tagged_pred)
+z <- model.matrix(~0+tag_factor,tagged_pred)
+z <- data.table(z)
+setnames(z,"tag_factor-1","bad")
+z$bad <- NULL
+z <- cbind(z, tagged_pred$V10)
+setnames(z, "V2","peak_count")
+z <- cbind(z, tagged_pred$tagged)
+z$peak_count <- log(z$peak_count)
+setnames(z,"V2","tagged")
+z <- cbind(z,tagged_pred$after_sum)
+setnames(z,"V2","after_sum")
+
+form <- as.formula(paste0("log(after_sum)~",paste(names(z)[1:(length(names(z))-3)],collapse="+"), "+s(peak_count,bs=\"cr\")"))
+
+res_tag <- bam(form,data=z)
 
 library(stringr)
 sum_res_tag <- summary(res_tag)
+
+tag_names <- fread("data/tag_names.tsv")
+setnames(tag_names,c("tag_id","name","ent1","ent2"))
 
 df <- data.frame(sum_res_tag$p.table[which(sum_res_tag$p.table[,4] < .001), ])
 
@@ -193,11 +172,8 @@ global_freq$type <- factor(global_freq$type, levels=rev(c("Not sig.",
 
 boot_res <- global_freq[,as.list(smean.cl.boot(freq)),by=type]
 
-p3 <-ggplot(global_freq,aes(Estimate,freq)) + geom_point() +  scale_y_log10() + ylab("Global Popularity") + xlab("Regression Coefficient") + geom_hline(y=11064.2, color='red') + geom_hline(y=15641, color='red')
+p3 <-ggplot(global_freq,aes(Estimate,freq)) + geom_point() +  scale_y_log10() + ylab("Global Popularity") + xlab("Regression Coefficient") + geom_hline(y=8660.8, color='red') + geom_hline(y=11032, color='red')
 ggsave("paper/tagRegressionWithMoreData.png", dpi=400,w=10,h=6)
-
-
-
 
 
 user_freq <- fread("userCountsByTag.tsv")
@@ -219,7 +195,28 @@ user_freq$type <- factor(user_freq$type, levels=rev(c("Not sig.",
 
 boot_res <- user_freq[,as.list(smean.cl.boot(freq)),by=type]
 
-p4 <-ggplot(user_freq,aes(Estimate,freq)) + geom_point() +  scale_y_log10() + ylab("Number of unique users") + xlab("Regression Coefficient") + geom_hline(y=671.2, color='red') + geom_hline(y=835.47, color='red')
+p4 <-ggplot(user_freq,aes(Estimate,freq)) + geom_point() +  scale_y_log10() + ylab("Number of unique users") + xlab("Regression Coefficient") + geom_hline(y=1518.19, color='red') + geom_hline(y=1872.3, color='red')
 ggsave("paper/tagRegressionWithMoreDataPeople.png", dpi=400,w=10,h=6)
 
 
+
+#####WRITE OUT FOR JARED######
+df <- data.frame(sum_res_tag$p.table)
+setnames(df, c("Estimate","stdErr","t_val","p_val"))
+df$tag_id <- as.integer(sub("tag_factor","",row.names(df)))
+df <- merge(df, tag_names,by="tag_id")
+
+global_freq <- fread("global_tag_freqs.tsv")
+f <- merge(df,global_freq,by="tag_id",all.x=T)
+setnames(f, "freq","n_times_tagged")
+
+user_freq <- fread("userCountsByTag.tsv")
+setnames(user_freq, c("tag_id","tag_name","freq"))
+f <- merge(f,user_freq,by="tag_id",all.x=T)
+setnames(f,"freq","unique_users")
+setnames(f, "tag_name.x","tn")
+f$tn <- NULL
+setnames(f, "tag_name.y","tn")
+f$tn <- NULL
+
+write.csv(f,file="for_jared_new_results.csv")
