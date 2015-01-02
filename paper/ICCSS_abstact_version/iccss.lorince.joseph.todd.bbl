@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{Gupta2010}
+M.~Gupta, R.~Li, Z.~Yin, and J.~Han.
+\newblock {Survey on social tagging techniques}.
+\newblock {\em {ACM SIGKDD Explorations Newsletter}}, {12}(1):58--72, 2010.
+
+\bibitem{Lorince2014}
+J.~Lorince, S.~Zorowitz, J.~Murdock, and P.~M. Todd.
+\newblock {"Supertagger" behavior in building folksonomies}.
+\newblock In {\em {Proceedings of the 6th Annual ACM Web Science Conference}},
+  pages 129--138. {ACM}, 2014.
+
+\bibitem{VanderWal2007}
+T.~Vander~Wal.
+\newblock {Folksonomy Coinage and Definition}, 2007.
+
+\end{thebibliography}

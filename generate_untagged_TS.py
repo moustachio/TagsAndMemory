@@ -70,7 +70,6 @@ sparse_mat = sparse.csr_matrix(trimmed)
 print 'saving chunk %s' % chunk
 fi = drive+'chunk%03d' % chunk
 sparse_saver(sparse_mat,fi)
-mat = np.empty((chunksize,arrayLength))
 
 # Now we concatenate all the chunks together into one big sparse matrix.
 prefix = drive

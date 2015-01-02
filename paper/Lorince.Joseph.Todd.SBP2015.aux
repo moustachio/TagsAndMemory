@@ -16,8 +16,6 @@
 \citation{Glushko2008,Halpin2007,Golder2006}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}}
 \newlabel{sec_related}{{2}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The formal study of folksonomies}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Why do people tag?}{2}}
 \citation{Heckner2009,Zollers2007,Ames2007}
 \citation{Gupta2010}
 \citation{Marlow2006}
@@ -25,51 +23,43 @@
 \citation{Ames2007,Nov2008}
 \citation{Korner2010,Korner2010a,Zubiaga2011}
 \citation{VanderWal2005}
+\citation{Lorince2013,Lorince2014}
+\citation{Lorince2013,Lorince2014}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Dataset}{3}}
 \newlabel{sec_dataset}{{3}{3}}
-\citation{Lorince2013,Lorince2014}
-\citation{Lorince2013,Lorince2014}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dataset summary\relax }}{4}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:data_summary}{{1}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Analyses \& Results}{5}}
-\newlabel{sec_analyses}{{4}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}RQ1: Comparison of tagged and untagged time-series}{5}}
+\@writefile{tdo}{\contentsline {todo}{From review 1: ``90-element vector has not been clearly explained. Does each element point represent a frequency?'' But isn't that exactly what this says? I guess we can re-word this, but it seemed clear to me...}{4}}
+\pgfsyspdfmark {pgfid1}{20223214}{31973686}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Analyses \& Results}{4}}
+\newlabel{sec_analyses}{{4}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}RQ1: Comparison of tagged and untagged time-series}{4}}
+\@writefile{tdo}{\contentsline {todo}{From review 1: ``The procedure regarding RQ1 needs more clarification, at least some visual support or a pseudo-code.'' We have such limited space here, I'm not sure what else to add. I guess we could include some sort of image (pseudocode doesn't seem appropriate to me...}{5}}
+\pgfsyspdfmark {pgfid2}{20223214}{16321738}
 \citation{hastie1990generalized}
 \citation{wood2001mgcv}
-\@writefile{tdo}{\contentsline {todo}{Note from Peter: but there's also a small but reliable (presumably) *lower* rate of listening to the tagged artists *before* the peak--what's up with that? In some sense this indicates that songs that ``catch on'' for a user more quickly (rise faster in listening from before the peak to the peak) are more likely to be tagged--so maybe we're just seeing that such ``faster-rising'' artists are also more likely to be listened to more later, and it's not a result of the tag? I'd be happier if the lines before the peak overlapped exactly.... :)[From Jared: He makes a good point, but I'm not sure off the top of my head how best to address this, at least not concisely. I can add in something to the effect of what he says I guess.]}{6}}
-\pgfsyspdfmark {pgfid1}{20223214}{38178479}
-\@writefile{tdo}{\contentsline {todo}{Also from Peter, regarding Fig 1A: would be cleaner to change x-axis values to -6, -5, ... -1, 0, 1, 2, ... 6 and change label to ``Months before/after peak at 0'' or something like that.}{6}}
-\pgfsyspdfmark {pgfid2}{20223214}{32764274}
-\@writefile{tdo}{\contentsline {todo}{And regarding Fig. 1B (I think he's right on both issues with fig 1A/B): rather than plotting log listens (which are hard to think about), how about plotting listens, but on a log-log plot?}{6}}
-\pgfsyspdfmark {pgfid3}{20223214}{30065725}
-\@writefile{tdo}{\contentsline {todo}{From Peter: not clear what listening distributions you're talking about (do you mean for a given user, across all the artists they listen to, or do you mean the number of listens across all these different user-trajectories for a given month? And I'd say ``not necessarily representative of any one user's data.'' (if that's what you mean). [Jared says: In retrospect. I'm not 100\% sure what you meant here either...]}{6}}
-\pgfsyspdfmark {pgfid4}{20223214}{22957856}
-\@writefile{tdo}{\contentsline {todo}{From Peter: not clear--why does having a lot of data mean that the relationship can't be linear? That doesn't seem logical. Reword/explain. And also you could simplify the wording of the rest of the sentence to something like ``it was unreasonable to assume a linear relationship between the dependent and independent variables.''}{6}}
-\pgfsyspdfmark {pgfid5}{20223214}{10466662}
+\@writefile{tdo}{\contentsline {todo}{From review 1: ``It would be better to include the variables and the mathematical form for GAM for both questions. The current representation is too verbal to follow.'' Here and for RQ2, I think adding in the formula isn't a bad idea. I think the appropriate format would be something like what I've added in here (and below).}{6}}
+\pgfsyspdfmark {pgfid3}{20223214}{27100522}
 \newlabel{fig:taggedVsUntagged}{{1a}{7}}
 \newlabel{sub@fig:taggedVsUntagged}{{(a)}{a}}
 \newlabel{fig:regression}{{1b}{7}}
 \newlabel{sub@fig:regression}{{(b)}{b}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Comparison of tagged and untagged listening time-series. Mean normalized playcount by month (a), and Regression results, with 95\% confidence interval (b).\relax }}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Comparison of tagged and untagged listening time-series. Mean normalized playcount by month (a), and Regression results (b), both with 95\% confidence interval.\relax }}{7}}
+\newlabel{fig:regressionFigs}{{1}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{7}}
-\newlabel{fig:regressionFigs}{{1}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Tag analysis}{7}}
-\@writefile{tdo}{\contentsline {todo}{We need to justify this particular threshold...is it just that with less data we couldn't reliably estimate the regressors or...?}{7}}
-\pgfsyspdfmark {pgfid6}{20223214}{46776844}
-\@writefile{tdo}{\contentsline {todo}{From Peter: Why this sig level? [Maybe it would make sense to just use 0.01? Then we could have more data for fig. 2...]}{8}}
-\pgfsyspdfmark {pgfid7}{20223214}{32360667}
-\@writefile{tdo}{\contentsline {todo}{Peter makes the good point that we can actually check if these are idiosyncratic by checking how many unique users use each of these tags. I can get those numbers to you, and maybe you can generate the same plot (or more points on this plot) showing the number of unique users for each tag?}{8}}
-\pgfsyspdfmark {pgfid8}{20223214}{22514077}
-\@writefile{tdo}{\contentsline {todo}{From Peter: How are we to interpret these regression coefficients? I.e., what does coef=1 mean in terms of the change in number of listens over the next six months? In other words, were the ``strong'' tags having a sizable impact on listening?}{8}}
-\pgfsyspdfmark {pgfid9}{20223214}{15058446}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Logarithm of tags' global popularity as a function of regression coefficient.\relax }}{9}}
-\newlabel{fig:coefVsPopularity}{{2}{9}}
-\@writefile{tdo}{\contentsline {todo}{From Peter: Change y-axis to ``Global popularity''}{9}}
-\pgfsyspdfmark {pgfid10}{20223214}{29977244}
-\@writefile{tdo}{\contentsline {todo}{Big question: Doesn't it look like the ``weight'' of these points is on the negative side--i.e., more points indicating less listening after tagging? But then how does that fit with the overall result of an *increase* in listening after tagging? [Jared says: Huh, that's totally true. If more tags seem to decreases listening, how is that the overall effect of tagging increases listening?]}{9}}
-\pgfsyspdfmark {pgfid11}{20223214}{27279631}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}RQ2: Tag analysis}{7}}
+\@writefile{tdo}{\contentsline {todo}{Here I've added another mathematical description of the model. Please review this, too.}{7}}
+\pgfsyspdfmark {pgfid4}{20223214}{21056969}
+\newlabel{fig:coefVsPopularity}{{2a}{8}}
+\newlabel{sub@fig:coefVsPopularity}{{(a)}{a}}
+\newlabel{fig:coefVsPopularityPeople}{{2b}{8}}
+\newlabel{sub@fig:coefVsPopularityPeople}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces In (a), the logarithm of tags' global popularity as a function of regression coefficient; in (b) the logarithm of number of unique users as a function of regression coefficient\relax }}{8}}
+\newlabel{fig:secondPlotSet}{{2}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{8}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{9}}
 \newlabel{sec_conclusion}{{5}{9}}
 \bibstyle{splncs}
@@ -83,6 +73,8 @@
 \bibcite{hastie1990generalized}{7}
 \bibcite{Heckner2009}{8}
 \bibcite{Hotho2006a}{9}
+\@writefile{tdo}{\contentsline {todo}{Note the new sentence (``There are also many...'') to help address reviewer 3's comments}{10}}
+\pgfsyspdfmark {pgfid5}{20223214}{29789328}
 \bibcite{Korner2010}{10}
 \bibcite{Korner2010a}{11}
 \bibcite{Lorince2013}{12}
@@ -94,7 +86,6 @@
 \bibcite{VanderWal2005}{18}
 \bibcite{VanderWal2007}{19}
 \bibcite{wood2001mgcv}{20}
-\bibcite{Yeung2009}{21}
-\bibcite{Yeung2011}{22}
-\bibcite{Zollers2007}{23}
-\bibcite{Zubiaga2011}{24}
+\bibcite{Yeung2011}{21}
+\bibcite{Zollers2007}{22}
+\bibcite{Zubiaga2011}{23}
